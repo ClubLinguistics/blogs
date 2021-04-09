@@ -131,15 +131,15 @@ window.onload = wrap_img;
 
 <p>Now coming back to GAMs, here ‘year’ and ‘age’ are quantitative variables, and ‘education’ is a qualitative variable with ﬁve levels: &lt;HS, HS, &lt;Coll, Coll ,&gt;Coll, referring to the amount of high school or college education that an individual has completed. We ﬁt the ﬁrst two functions using natural splines. We ﬁt the third function using a separate constant for each level, via the dummy variable approach (for each level of education we create a separate feature with binary value 0 or 1, for example, in case person has high school (HS) as education, ‘HS’ will be 1 and for every other feature of levels it will be 0. )</p>
 
-<p><img src="/images/year_orig.jpg" alt="" title="Source : An Introduction to Statistical Learning with Applications in R ,book by Robert Tibshirani, Gareth James, Trevor Hastie, Daniela Witten" /></p>
+<p><img src="/blogs/images/year_orig.jpg" alt="" title="Source : An Introduction to Statistical Learning with Applications in R ,book by Robert Tibshirani, Gareth James, Trevor Hastie, Daniela Witten" /></p>
 
 <p>Figure 1 shows the results of ﬁtting the model using least squares to predict wages on the basis of ‘years’ keeping age and education constant. Wage tends to increase slightly with year; this may be due to inﬂation.</p>
 
-<p><img src="/images/age_orig.jpg" alt="" title="Source : An Introduction to Statistical Learning with Applications in R ,book by Robert Tibshirani, Gareth James, Trevor Hastie, Daniela Witten" /></p>
+<p><img src="/blogs/images/age_orig.jpg" alt="" title="Source : An Introduction to Statistical Learning with Applications in R ,book by Robert Tibshirani, Gareth James, Trevor Hastie, Daniela Witten" /></p>
 
 <p>Figure 2 indicates that holding education and year ﬁxed, wage tends to be highest for intermediate values of age, and lowest for the very young and very old.</p>
 
-<p><img src="/images/edu_orig.jpg" alt="" title="Source : An Introduction to Statistical Learning with Applications in R ,book by Robert Tibshirani, Gareth James, Trevor Hastie, Daniela Witten" /></p>
+<p><img src="/blogs/images/edu_orig.jpg" alt="" title="Source : An Introduction to Statistical Learning with Applications in R ,book by Robert Tibshirani, Gareth James, Trevor Hastie, Daniela Witten" /></p>
 
 <p>Figure 3 indicates that holding year and age ﬁxed, wage tends to increase with education: the more educated a person is, the higher their salary, on average.</p>
 
