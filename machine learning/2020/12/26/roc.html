@@ -119,7 +119,7 @@ window.onload = wrap_img;
 
 <p>Rather than predicting samples are positive or not, we predict the probability of having heart disease for each sample, and if this probability is greater than the threshold, we say the given patient has heart disease. So let’s say we select a threshold value of 0.1 therefore, if the probability is greater than 0.1 we say that particular patient has heart disease. Now as we vary the threshold it is obvious that prediction will also vary. For example, if the threshold is 0, we will predict every sample in the data is positive (since, probability is greater than equals to 0). Similarly, if we have a high threshold of say 0.9, <strong>even though the patient has heart disease it is possible that prediction will be ‘no heart disease’ which is very risky!</strong> So we have to choose a threshold in such a way that not only we must have good predictions but also balance the tradeoff. Now we give a summary. Table.1 shows the possible results when applying a classiﬁer to the data, this table is also known as <strong>confusion matrix</strong>. Now, let us define terms given in the table require to build ROC curve.</p>
 
-<p><img src="/images/table_1_to_upload.png" alt="" title="Source: 'Understanding Confusion matrix and applying it on KNN-Classifier on Iris Data set' by Vishwanath Beena on medium" /></p>
+<p><img src="/blogs/images/table_1_to_upload.png" alt="" title="Source: 'Understanding Confusion matrix and applying it on KNN-Classifier on Iris Data set' by Vishwanath Beena on medium" /></p>
 
 <p>True positive (TP): Given a patient’s information (age, sex… values), if your model predicts heart disease, and the patient actually has heart disease then, it is considered a true positive.</p>
 
@@ -157,17 +157,17 @@ window.onload = wrap_img;
 
 <p>ROC provides a simple way to summarize the information related to different thresholds and resulting TPR and FPR values.Table.2 illustrates TPR and FPR values for different thresholds.</p>
 
-<p><img src="/images/table_2_to_upload.png" alt="" /></p>
+<p><img src="/blogs/images/table_2_to_upload.png" alt="" /></p>
 
 <p>You might wonder why some threshold values are negative? I will explain this later. Now, Rather than building different tables (like Table.1.) for different values of threshold, you can just look at ROC curve to decide what threshold to select. Most of the time, the top-left value on ROC curve should give you a quite good threshold, as illustrated in Fig.1, and the corresponding threshold value is highlighted in Table.2.</p>
 
-<p><img src="/images/Fig_1_to_upload.png" alt="" /></p>
+<p><img src="/blogs/images/Fig_1_to_upload.png" alt="" /></p>
 
 <p>Depend on how many false positive you are willing to accept, you decide optimal threshold. For example, if you don’t want to have too many false positives you should have a high threshold value. This will however, also give you a lot more false negatives. Observe the trade-off and select the best threshold, <strong>by decreasing the threshold value of TPR, FPR increases and specificity decreases</strong>. Similarly, when we increase the threshold TPR, FPR decreases but specificity increases.</p>
 
 <p>AUC makes it easy to compare one ROC curve to another, <strong>larger the area under the curve the better the model.</strong></p>
 
-<p><img src="/images/Fig_2_to_upload.png" alt="" /></p>
+<p><img src="/blogs/images/Fig_2_to_upload.png" alt="" /></p>
 
 <p>In Fig.2.The AUC for SVM with gamma is equals to 0.001is 0.88, the AUC for SVM with gamma is equals to 0.0001 is 0.76, and the AUC for SVM with gamma is equals to 0.00001 is 0.75. We say SVM with gamma is equals to 0.001 is better model than others, since, 0.88 is close to maximum value of AUC that is one, AUC corresponds to SVM with gamma is equals to 0.001 is illustrated in Fig.1., we expect a classifier that performs no better than chance to have an AUC of 0.5, the no information classifier in Fig.2 (red line) predicts every patient as ’with heart disease’ independent of actual target (class).</p>
 
