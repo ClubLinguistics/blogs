@@ -3,8 +3,8 @@ toc: true
 layout: post
 description: A minimal example of using markdown with fastpages.
 categories: [markdown]
-hide: true
-search_exclude: false 
+hide: false
+search_exclude: true
 image: images/Home_poster.jpg
 title: An Example Markdown Post
 ---
