@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>What is PCA ? | Club Linguistics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="What is PCA ?" />
+<meta name="author" content="Saurav Jadhav" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Principal component analysis (PCA) is to find the subset of variables that best explains the variation in the data." />
+<meta property="og:description" content="Principal component analysis (PCA) is to find the subset of variables that best explains the variation in the data." />
+<link rel="canonical" href="https://clublinguistics.github.io/blogs/machine%20learning/2020/06/09/pca.html" />
+<meta property="og:url" content="https://clublinguistics.github.io/blogs/machine%20learning/2020/06/09/pca.html" />
+<meta property="og:site_name" content="Club Linguistics" />
+<meta property="og:image" content="https://clublinguistics.github.io/blogs/images/pca_fig_1.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-09T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Principal component analysis (PCA) is to find the subset of variables that best explains the variation in the data.","url":"https://clublinguistics.github.io/blogs/machine%20learning/2020/06/09/pca.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://clublinguistics.github.io/blogs/machine%20learning/2020/06/09/pca.html"},"headline":"What is PCA ?","dateModified":"2020-06-09T00:00:00-05:00","datePublished":"2020-06-09T00:00:00-05:00","author":{"@type":"Person","name":"Saurav Jadhav"},"image":"https://clublinguistics.github.io/blogs/images/pca_fig_1.jpeg","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blogs/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://clublinguistics.github.io/blogs/feed.xml" title="Club Linguistics" /><link rel="shortcut icon" type="image/x-icon" href="/blogs/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blogs/">Club Linguistics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blogs/about/">About</a><a class="page-link" href="/blogs/search/">Search</a><a class="page-link" href="/blogs/categories/">Topics</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">What is PCA ?</h1><p class="page-description">Principal component analysis (PCA) is to find the subset of variables that best explains the variation in the data.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-06-09T00:00:00-05:00" itemprop="datePublished">
+        Jun 9, 2020
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Saurav Jadhav</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blogs/categories/#machine learning">machine learning</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>It often happens there are so many features in the data set and small fraction of information is present in each feature or variable. For ex: suppose we have a dataset which consist of 50 columns (features), it will be almost impossible to visualize this 50 features in the same plot (like 50 dimensional view or 2 dimensional plot for every feature VS 49 others) and look for insights. So what we do is that we find a low-dimensional representation of the data that captures as much of the information as possible. If we can obtain a two-dimensional representation of the data that captures most of the information, then we can plot the observations in this low-dimensional space. PCA provides a tool to do just this. <strong>It finds a low-dimensional representation of a data set that contains as much as possible variation.</strong> The idea is that each of the say ’n’ observations that lives in some p-dimensional space, not all of these dimensions are equally interesting. PCA seeks a small number of dimensions that are as interesting as possible, where the concept of interesting is measured by the amount that the observations vary along each dimension. Let’s look at an small example, suppose we have an advertisement data which consist of two features: population size (pop) in tens of thousands of people, and ad spending for a particular company (ad) in thousands of dollars, for 100 cities (no. of observations). So for the two features we will have a two dimensional view of the data. When we look for the lower dimensional view, we are set to find principal components using the data or given feature which best explains the variation in the data(which are typically less than the number of features present in the data) .</p>
+
+<p><img src="/images/pca_fig_1.jpeg" alt="" title="Source : An Introduction to Statistical Learning with Applications in R ,book by Robert Tibshirani, Gareth James, Trevor Hastie, Daniela Witten" /></p>
+
+<p>The green solid line in Fig 1 represents the first principal component direction(Z1) of the data. We can see by eye that this is the direction along which there is the greatest variability in the data (In general more populated cities will have larger Ad Spending). That is, if we projected the 100 observations onto this line then the resulting projected observations would have the largest possible variance; projecting the observations onto any other line would yield projected observations with lower variance. <strong>Projecting a point onto a line simply involves finding the location on the line which is closest to the point</strong>, illustrated in fig2.</p>
+
+<p><img src="/images/pca_fig_2.jpeg" alt="" title="Source : An Introduction to Statistical Learning with Applications in R ,book by Robert Tibshirani, Gareth James, Trevor Hastie, Daniela Witten" /></p>
+
+<p>Which means we are projecting the original data from 2D plane to 1D line Now in the fig1 there is also a blue dashed line which is the second principal component(Z2) and is perpendicular(orthogonal) to the first(green line). Projecting the points on to this line will explain lesser variance than the first. So there are two important properties of principal components:</p>
+
+<p><strong>1) Principal component directions are orthogonal.</strong></p>
+
+<p><strong>2) The next principal component always explains lesser variance than the previous.</strong></p>
+
+<p>Now since the data itself is 2 dimensional we cannot have more than 2 principal component vector. In the figure1 having 3rd principal component will have the same direction as of 1st. <strong>Note</strong>: Population and Ad spending are measured on different scales ,that is for population measured in number of people and for Ad spending measured in dollars, Therefore we need to standardized them (removing the effect of measurement). Now what about the dataset for which features are greater than 2? We illustrate the use of PCA on the USArrests data set. For each of the 50 states (number of observations) in the United States, the data set contains the number of arrests per 100,000 residents for each of three crimes: Assault, Murder, and Rape. We also record UrbanPop (the percent of the population in each state living in urban areas).</p>
+
+<p>PCA was performed after standardizing each variable to have mean zero and standard deviation one, It is necessary because measurement of UrbanPop and for that of crimes are in different scales .Having the mean zero enable us to shift the origin so that all the features are measured from the same point.</p>
+
+<p>Figure 3 plots the first two principal components of these data.</p>
+
+<p><img src="/images/pca_fig3.jpeg" alt="" title="Source : An Introduction to Statistical Learning with Applications in R ,book by Robert Tibshirani, Gareth James, Trevor Hastie, Daniela Witten" /></p>
+
+<p>In the above figure value for the principal component (1 and 2) value less than 0 indicates below average (since values for all the features are standardized). For example, for the state Montana the value for Murder, Assault, Rape and Urbanpop are less than average.</p>
+
+<p>Note: The Urbanpop, Murder, Assault and Rape are all features of the USArrest Dataset.</p>
+
+<p>In Figure3, we see that the first loading vector(X-axis values for each feature ) places approximately equal weight on Assault, Murder, and Rape, with much less weight on UrbanPop. Hence this component roughly corresponds to a measure of overall rates of serious crimes. The second loading vector (Y-axis values for each feature) places most of its weight on UrbanPop and much less weight on the other three features. Hence, this component roughly corresponds to the level of urbanization (how much populated the state is) of the state. Overall, we see that the crime-related variables (Murder, Assault, and Rape) are located close to each other, and that the UrbanPop variable is far from the other three. This indicates that the crime-related variables are correlated with each other — states with high murder rates tend to have high assault and rape rates — and that the UrbanPop variable is less correlated with the other three. Our discussion of the loading vectors suggests that states with large positive scores on the first component, such as California, Nevada and Florida, have high crime rates, while states like North Dakota, with negative scores on the first component, have low crime rates. California also has a high score on the second component, indicating a high level of urbanization, while the opposite is true for states like Mississippi. States close to zero on both components, such as Indiana, have approximately average levels of both crime and urbanization.</p>
+
+<p>PCA projects the data onto lower dimensions (which is within itself is so amazing!) which helps in visualization and drawing insights(Exploratory Data Analysis), There is one more application in which the principal components are used as features to predict the output(Supervised learning) known as <strong>Principal component regression(PCR)</strong>.</p>
+
+<p>Computation of principal component is too technical to discuss here, it involves the concept of linear algebra:<strong>Singular Value Decomposition(SVD).</strong></p>
+
+<p><strong>Reference</strong>: An Introduction to Statistical Learning with Applications in R, book by Robert Tibshirani, Gareth James, Trevor Hastie, Daniela Witten.</p>
+
+  </div><a class="u-url" href="/blogs/machine%20learning/2020/06/09/pca.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blogs/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blogs/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blogs/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Community to promote various stories from various domains in various languages.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/ClubLinguistics" title="ClubLinguistics"><svg class="svg-icon grey"><use xlink:href="/blogs/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
