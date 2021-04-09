@@ -4,7 +4,7 @@ layout: post
 description: A minimal example of using markdown with fastpages.
 categories: [markdown]
 hide: false
-search_exclude: true
+search_exclude: false
 title: An Example Markdown Post
 ---
 # Example Markdown Post
