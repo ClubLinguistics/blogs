@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>What Is ROC Curve? | Club Linguistics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="What Is ROC Curve?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ROC curve is an evaluation metric which measures the performance of a machine learning model by visualizing, especially when data is skewed." />
+<meta property="og:description" content="ROC curve is an evaluation metric which measures the performance of a machine learning model by visualizing, especially when data is skewed." />
+<link rel="canonical" href="https://clublinguistics.github.io/blogs/machine%20learning/2020/12/26/roc.html" />
+<meta property="og:url" content="https://clublinguistics.github.io/blogs/machine%20learning/2020/12/26/roc.html" />
+<meta property="og:site_name" content="Club Linguistics" />
+<meta property="og:image" content="https://clublinguistics.github.io/blogs/images/Fig_2_to_upload.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-26T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"ROC curve is an evaluation metric which measures the performance of a machine learning model by visualizing, especially when data is skewed.","url":"https://clublinguistics.github.io/blogs/machine%20learning/2020/12/26/roc.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://clublinguistics.github.io/blogs/machine%20learning/2020/12/26/roc.html"},"headline":"What Is ROC Curve?","dateModified":"2020-12-26T00:00:00-06:00","datePublished":"2020-12-26T00:00:00-06:00","image":"https://clublinguistics.github.io/blogs/images/Fig_2_to_upload.png","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blogs/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://clublinguistics.github.io/blogs/feed.xml" title="Club Linguistics" /><link rel="shortcut icon" type="image/x-icon" href="/blogs/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blogs/">Club Linguistics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blogs/about/">About</a><a class="page-link" href="/blogs/search/">Search</a><a class="page-link" href="/blogs/categories/">Topics</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">What Is ROC Curve?</h1><p class="page-description">ROC curve is an evaluation metric which measures the performance of a machine learning model by visualizing, especially when data is skewed.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-26T00:00:00-06:00" itemprop="datePublished">
+        Dec 26, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blogs/categories/#machine learning">machine learning</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="what-is-roc-curve">What Is ROC Curve?</h1>
+
+<p><strong>ROC curve is an evaluation metric which measures the performance of a machine learning model by visualizing, especially when data is skewed</strong>. Let’s see what exactly that means,</p>
+
+<p>Consider <strong>heart data</strong> which consist of 13 features such as <strong>age, sex, chol (cholesterol measurement)</strong>. Our goal is to predict whether an individual has heart disease based on the above features, this is a <strong>binary classification problem</strong>. That is, with only two classes. Let us suppose we have 100 samples (a sample corresponds to patient information) amongst which 90 samples are positive (have a heart disease) so if you say that all patients (100 of them)have heart disease, you have correctly classified 90/100 samples. You didn’t even build the model and got an accuracy of 90%. But, if we look carefully we will see that the dataset is skewed. That is, number of positive samples is far more than the negative samples (patients without heart disease). So, it is not advisable to decide best model just on the basis of accuracy because, it does not represent the data completely. So, you might get high accuracy, but your model will probably not perform that well when it comes to real-world samples. Therefore, we need a more reliable evaluation metric and hence, ROC comes into the picture.</p>
+
+<p>Here we will use <a href="https://medium.com/swlh/what-is-svm-f4e06eca79b3">SVM (support vector machine)</a> as model with different values of gamma (parameter) for comparison and with the help of ROC curve figure out which value of gamma gives us the optimal result (best model). Let’s see this in detail.</p>
+
+<p>Rather than predicting samples are positive or not, we predict the probability of having heart disease for each sample, and if this probability is greater than the threshold, we say the given patient has heart disease. So let’s say we select a threshold value of 0.1 therefore, if the probability is greater than 0.1 we say that particular patient has heart disease. Now as we vary the threshold it is obvious that prediction will also vary. For example, if the threshold is 0, we will predict every sample in the data is positive (since, probability is greater than equals to 0). Similarly, if we have a high threshold of say 0.9, <strong>even though the patient has heart disease it is possible that prediction will be ‘no heart disease’ which is very risky!</strong> So we have to choose a threshold in such a way that not only we must have good predictions but also balance the tradeoff. Now we give a summary. Table.1 shows the possible results when applying a classiﬁer to the data, this table is also known as <strong>confusion matrix</strong>. Now, let us define terms given in the table require to build ROC curve.</p>
+
+<p><img src="/images/table_1_to_upload.png" alt="" title="Source: 'Understanding Confusion matrix and applying it on KNN-Classifier on Iris Data set' by Vishwanath Beena on medium" /></p>
+
+<p>True positive (TP): Given a patient’s information (age, sex… values), if your model predicts heart disease, and the patient actually has heart disease then, it is considered a true positive.</p>
+
+<p>True negative (TN): Given a patient’s information, if your model predicts no heart disease, and the patient actually has no heart disease then, it is considered a true negative.</p>
+
+<p>In simple words, if your model correctly predicts positive class, it is true positive, and if your model correctly predicts negative class, it is a true negative.</p>
+
+<p>False positive (FP): Given a patient’s information, if your model predicts heart disease, and the patient actually has no heart disease then, it is considered a false positive.</p>
+
+<p>False negative(FN): Given a patient’s information, if your model predicts no heart disease, and the patient actually has heart disease then, it is considered a false negative.</p>
+
+<p>In simple words, if your model incorrectly (or falsely) predicts positive class, it is a false positive. If your model incorrectly (or falsely) predicts negative class, it is a false negative. Now,</p>
+
+<p>TPR/Sensitivity is defined as:</p>
+
+<p>TP / P</p>
+
+<p>Where P = TP+FN</p>
+
+<p>TPR is ‘The fraction of patients with heart disease which are correctly identified’.</p>
+
+<p>FPR/False Positive Rate is defined as:</p>
+
+<p>FP / N</p>
+
+<p>FPR is ‘The fraction of patients without heart disease which are incorrectly identified as with heart disease’.</p>
+
+<p>Specificity is defined as:</p>
+
+<p>TN / N</p>
+
+<p>Where N = TN+FP</p>
+
+<p>Specificity is ‘The fraction of patients without heart disease which are correctly identified’.</p>
+
+<p>ROC provides a simple way to summarize the information related to different thresholds and resulting TPR and FPR values.Table.2 illustrates TPR and FPR values for different thresholds.</p>
+
+<p><img src="/images/table_2_to_upload.png" alt="" /></p>
+
+<p>You might wonder why some threshold values are negative? I will explain this later. Now, Rather than building different tables (like Table.1.) for different values of threshold, you can just look at ROC curve to decide what threshold to select. Most of the time, the top-left value on ROC curve should give you a quite good threshold, as illustrated in Fig.1, and the corresponding threshold value is highlighted in Table.2.</p>
+
+<p><img src="/images/Fig_1_to_upload.png" alt="" /></p>
+
+<p>Depend on how many false positive you are willing to accept, you decide optimal threshold. For example, if you don’t want to have too many false positives you should have a high threshold value. This will however, also give you a lot more false negatives. Observe the trade-off and select the best threshold, <strong>by decreasing the threshold value of TPR, FPR increases and specificity decreases</strong>. Similarly, when we increase the threshold TPR, FPR decreases but specificity increases.</p>
+
+<p>AUC makes it easy to compare one ROC curve to another, <strong>larger the area under the curve the better the model.</strong></p>
+
+<p><img src="/images/Fig_2_to_upload.png" alt="" /></p>
+
+<p>In Fig.2.The AUC for SVM with gamma is equals to 0.001is 0.88, the AUC for SVM with gamma is equals to 0.0001 is 0.76, and the AUC for SVM with gamma is equals to 0.00001 is 0.75. We say SVM with gamma is equals to 0.001 is better model than others, since, 0.88 is close to maximum value of AUC that is one, AUC corresponds to SVM with gamma is equals to 0.001 is illustrated in Fig.1., we expect a classifier that performs no better than chance to have an AUC of 0.5, the no information classifier in Fig.2 (red line) predicts every patient as ’with heart disease’ independent of actual target (class).</p>
+
+<p>You can also compare other classification models like: Logistic Regression, KNN classifier with SVM.</p>
+
+<p>AUC is a widely used metric for binary classification tasks in the industry, and a metric everyone should know about.</p>
+
+<p><strong>Note</strong>: In general we use probabilities for comparison with the threshold. In case of SVM, decision function values are computed and are compared with the threshold, and can take positive or negative values, which can be seen in Table.2. But the prediction is done in the same way: if function value greater than threshold we assign the sample to the positive class (patient predicted as, ‘with disease’), otherwise we assign the sample to negative class (patient predicted as, ‘without disease’).</p>
+
+<p><strong>References</strong>:</p>
+<ol>
+  <li>Approaching (Almost) Any Machine Learning Problem, book by Abhishek Thakur.</li>
+  <li>An Introduction to Statistical Learning with Applications in R, book by Robert Tibshirani, Gareth James, Trevor Hastie, Daniela Witten.</li>
+</ol>
+
+
+  </div><a class="u-url" href="/blogs/machine%20learning/2020/12/26/roc.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blogs/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blogs/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blogs/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Community to promote various stories from various domains in various languages.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/ClubLinguistics" title="ClubLinguistics"><svg class="svg-icon grey"><use xlink:href="/blogs/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
