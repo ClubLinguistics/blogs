@@ -121,7 +121,7 @@ window.onload = wrap_img;
 
 <p>K-means clustering is a simple and elegant approach for partitioning a data set into K distinct, non-overlapping clusters. By non-overlapping we mean that no observation belongs to more than one cluster. To perform K-means clustering, we must ﬁrst specify the desired number of clusters K; then the K-means algorithm will assign each observation to exactly one of the K clusters. Figure.1. shows the results obtained from performing K-means clustering on a simulated example consisting of 150 observations in two dimensions, using three diﬀerent values of K.</p>
 
-<p><img src="/images/k_means_1.JPG" alt="" title="Source: An Introduction to Statistical Learning with Applications in R, book by Robert Tibshirani, Gareth James, Trevor Hastie and Daniela Witten." /></p>
+<p><img src="/blogs/images/k_means_1.JPG" alt="" title="Source: An Introduction to Statistical Learning with Applications in R, book by Robert Tibshirani, Gareth James, Trevor Hastie and Daniela Witten." /></p>
 
 <p>The idea behind K-means clustering is that a good clustering is one for which the <strong>within-cluster variation is as small as possible</strong>. That is, the difference between the observations in the same cluster is as small as possible. Here the question arises: <em>How to define within-cluster variation?</em></p>
 
@@ -146,11 +146,11 @@ window.onload = wrap_img;
 <hr />
 <p>In step 2(a) we compute the mean of the observations within the cluster (cluster centroid). Here an observation is nothing but a vector of p features. Then in step 2(b) we compute distance between the observation to every cluster centroid and then assign the observation to the cluster for which the distance is minimum. This means that as the algorithm is run, the clustering obtained will continually improve until the result no longer changes. When the result no longer changes, a local optimum has been reached. Figure 2 shows the progression of the algorithm on the toy example from Figure 1.</p>
 
-<p><img src="/images/k_means_2.JPG" alt="" title="Source: An Introduction to Statistical Learning with Applications in R, book by Robert Tibshirani, Gareth James, Trevor Hastie and Daniela Witten." /></p>
+<p><img src="/blogs/images/k_means_2.JPG" alt="" title="Source: An Introduction to Statistical Learning with Applications in R, book by Robert Tibshirani, Gareth James, Trevor Hastie and Daniela Witten." /></p>
 
 <p>K-means clustering derives its name from the fact that in Step 2(a), the cluster centroids are computed as the mean of the observations assigned to each cluster. Because the K-means algorithm ﬁnds a local optimum (minimizing the within cluster variance) rather than a global, the results obtained will depend on the initial (random) cluster assignment of each observation in Step 1 of Algorithm. For this reason, it is important to run the algorithm multiple times from diﬀerent random initial conﬁgurations. Then one selects the best solution, that is, <strong>Sum of within cluster variances of all the clusters (objective) is smallest</strong>. Figure 3 shows the local optima obtained by running K-means clustering six times using six diﬀerent initial cluster assignments, using the toy data from Figure 1. In this case, the best clustering is the one with an objective value of 235.8(least).</p>
 
-<p><img src="/images/k_means_3.JPG" alt="" title="Source: An Introduction to Statistical Learning with Applications in R, book by Robert Tibshirani, Gareth James, Trevor Hastie and Daniela Witten." /></p>
+<p><img src="/blogs/images/k_means_3.JPG" alt="" title="Source: An Introduction to Statistical Learning with Applications in R, book by Robert Tibshirani, Gareth James, Trevor Hastie and Daniela Witten." /></p>
 
 <p>As we have seen, to perform K-means clustering, we must decide how many clusters we expect in the data. The problem of selecting K is far from simple, and we may not know in advance how many clusters to select. Therefore, it is one of the drawbacks of K-means clustering. The mathematics of how clustering is performed is too technical to be discussed here.</p>
 
