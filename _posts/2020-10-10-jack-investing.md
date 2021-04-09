@@ -4,6 +4,7 @@ layout: post
 description: Jack Bogle was the founder and chief executive of The Vanguard Group, one of the world's largest investment companies.
 categories: [Investing]
 hide: false
+comments: true
 image: images/markus-spiske-investing.jpg
 author: Saurav Jadhav
 title: Jack Bogle’s Timeless Investment Principles
