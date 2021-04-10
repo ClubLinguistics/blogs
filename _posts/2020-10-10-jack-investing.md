@@ -16,11 +16,7 @@ Jack Bogle was the founder and chief executive of The Vanguard Group, one of the
 **Time is your friend**. Give yourself all the time you can. Begin to invest in your 20s, even if it’s only a small amount, and never stop. Even modest investments in tough times will help you sustain the pace and will become a habit. Compound interest is a miracle.
 
 **Impulse is your enemy**. Eliminate emotion from your investment program. Have rational expectations about future returns, and avoid changing those expectations as the seasons change. Cold, dark winters will give way to bright, bountiful springs.
- {% assign q1_text = "This is an awesome template!" %}
-  {% assign q1_choices = "True, False" | split: ', ' %}
-  {% assign q1_feedbacks = "Correct!  This is an awesome template., How can you say that?!" | split: ', ' %}
-  {% assign q1_correct = 0 %}
-  {% include mc-quiz.html text=q1_text choices=q1_choices answer=q1_correct feedback=q1_feedbacks %}
+{% assign q1-text = "This is an awesome template!" %} {% assign q1-choices = "True, False" | split: ', ' %} {% assign q1_feedbacks = "Correct! This is an awesome template., How can you say that?!" | split: ', ' %} {% assign q1-correct = 0 %} {% include mc-quiz.html text=q1-text choices=q1-choices answer=q1-correct feedback=q1_feedbacks %}
 **Basic arithmetic works**. Keep your investment expenses under control. Your net return is simply the gross return of your investment portfolio, less the costs you incur (sales commissions, advisory fees, transaction costs). Low costs make your task easier.
 
 **Stick to simplicity**. Don’t complicate the process. Basic investing is simple — a sensible asset allocation to stocks, bonds, and cash reserves; a selection of middle-of-the-road funds that emphasize high-grade securities; a careful balancing of risk, return, and (lest we forget) cost.
