@@ -14,12 +14,6 @@ The rapid rate of increase in plastic has led to the creation of increasing amou
 ![]({{ site.baseurl }}/images/global-primary-plastic.png 'Global primary plastics waste generation 1950–2015')
 
 It is clearly observed from the above figure that plastic waste generation increases year by year ,**300 million tonnes** of plastic waste was generated alone in 2015. Huge amount of waste plastic arise as a byproduct or faulty product in industry and agriculture. The plastic are mainly of two types : thermoplastics and thermosetting plastics. Thermo plastics are composed of polyolefin such as high density polyethylene (HDPE), low density polyethylene (LDPE), polypropylene (PP), polystyrene (PS), polyethylene terephthalate (PET) and polyvinyl chloride (PVC) and can be recycled. Thermosetting plastics mainly include epoxy resins and polyurethanes and cannot be recycled. Plastic wastes are the main causes of environmental pollution. There are three ways to manage plastic wastes: land filling, incineration and recycling. The problem of waste cannot be solved by landfilling and incineration, in landfilling we dumb the waste on the ground which not only consumes space but also pollutes ground water, in incineration it generates harmful greenhouse gases, e.g. NOx, SOx, COx.
-# Pokemon questions
-## Question 1: warm-up !
-Who's that pokemon ?
-( ) It's Pikachu
-(x) It's clefairy
-( ) abcd 
 
 Recycling of plastic is difficult and costly because of the restrictions on contamination of water and labor intensive segregation of different plastics before recycle which is labor intensive. Segregation of different plastic materials are essential since, they are made of different resin compound for difference in transparency and color. Dyed or pigmented plastics have a lower market value too. Clearly transparent plastics can be easily dyed to transform into new products, have greater flexibility and are mostly desirable by the manufacturers. Recycling plastic is energy intensive too. As there is an alarming depletion of energy sources, means of energy recovery from plastic waste is a good option. **Pyrolysis** is a suitable method for energy recovery from plastic waste and is one of the finest techniques for the conversion of mass to energy with liquid and gaseous products with high energy values. Below Figure represents the processes involved in the pyrolysis of plastic.
 
