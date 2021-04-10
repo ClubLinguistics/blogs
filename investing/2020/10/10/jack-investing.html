@@ -208,6 +208,95 @@ window.onload = wrap_img;
                       //btn.previousElementSibling.removeAttribute('disabled');
                    }(this))">Try Again</button>
   </div>
+<p>&lt;/div&gt;
+    &lt;div class="mcq panel panel-primary"&gt;</p>
+<div class="panel-heading">
+    Question
+  </div>
+<div class="panel-body">
+    <div class="qtext"><p>This is an awesome template!</p>
+</div>
+  </div>
+<table class="choices table" style="border-bottom:1px solid #ddd">
+    <tbody>
+      
+      <tr class="choice">
+        <td class="choice-radio col-xs-1">
+          <input type="radio" name="radio-choices" />
+        </td>
+        <td class="choice-text"><p>True</p>
+</td>
+        <td class="choice-feedback"><span class="hidden text-muted"><p>Correct! This is an awesome template.</p>
+</span></td>
+      </tr>
+      
+      <tr class="choice">
+        <td class="choice-radio col-xs-1">
+          <input type="radio" name="radio-choices" />
+        </td>
+        <td class="choice-text"><p>False</p>
+</td>
+        <td class="choice-feedback"><span class="hidden text-muted"><p>How can you say that?!</p>
+</span></td>
+      </tr>
+      
+    </tbody>
+  </table>
+<div class="feedback text-center">
+    <span class="success-msg lead text-success hidden">You have successfully completed this question!</span>
+  </div>
+<div class="text-center" style="padding: 5px;">
+    <button class="check btn btn-primary" onclick="(function (btn){
+                      answerIndex = 0;
+                      feedback = btn.parentNode.previousElementSibling
+                      feedbackMsg = feedback.firstElementChild;
+                      choices = feedback.previousElementSibling.firstElementChild.children;
+                      pBody = feedback.previousElementSibling.previousElementSibling;
+                      panel = pBody.parentNode;
+                      for (i=0; i&lt;choices.length; i++){
+                        radio = choices[i].firstElementChild.firstElementChild;
+                        radio.setAttribute('disabled', true);
+                        if (radio.checked) {
+                          msg = choices[i].lastElementChild.firstElementChild;
+                          msg.classList.remove('hidden');
+                          panel.classList.remove('paenl-primary');
+                          if (i === answerIndex) {
+                            panel.classList.add('panel-success');
+                            feedbackMsg.classList.remove('hidden');
+                          } else {
+                            panel.classList.add('panel-danger');
+                          }
+                        }
+                      }
+                      btn.classList.add('disabled');
+                      //btn.setAttribute('disabled', true);
+                   }(this))">
+      Check Answer
+    </button>
+    <button class="reset btn btn-default" onclick="(function (btn){
+                      feedback = btn.parentNode.previousElementSibling
+                      feedbackMsg = feedback.firstElementChild;
+                      feedbackMsg.classList.add('hidden');
+                      choices = feedback.previousElementSibling.firstElementChild.children;
+                      pBody = feedback.previousElementSibling.previousElementSibling;
+                      panel = pBody.parentNode;
+                      panel.classList.remove('panel-success');
+                      panel.classList.remove('panel-danger');
+                      panel.classList.add('panel-primary');
+                      for (i=0; i&lt;choices.length; i++){
+                        radio = choices[i].firstElementChild.firstElementChild;
+                        radio.checked = false;
+                        radio.removeAttribute('disabled');
+                        msg = choices[i].lastElementChild.firstElementChild;
+                        msg.classList.add('hidden');
+                        text = feedback.previousElementSibling;
+                        text.classList.remove('text-success');
+                        text.classList.remove('text-danger');
+                      }
+                      btn.previousElementSibling.classList.remove('disabled');
+                      //btn.previousElementSibling.removeAttribute('disabled');
+                   }(this))">Try Again</button>
+  </div>
 <p>&lt;/div&gt;</p>
 
 <p><strong>Basic arithmetic works</strong>. Keep your investment expenses under control. Your net return is simply the gross return of your investment portfolio, less the costs you incur (sales commissions, advisory fees, transaction costs). Low costs make your task easier.</p>
