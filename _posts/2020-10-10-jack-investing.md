@@ -17,6 +17,12 @@ Jack Bogle was the founder and chief executive of The Vanguard Group, one of the
 
 **Impulse is your enemy**. Eliminate emotion from your investment program. Have rational expectations about future returns, and avoid changing those expectations as the seasons change. Cold, dark winters will give way to bright, bountiful springs.
 
+?[What is the answer to Life, the Universe and Everything?]
+-[ ] There is no answer to that!
+-[ ] Sleep and eat
+-[x] Easy, this is 42
+-[ ] Peace & Love
+
 **Basic arithmetic works**. Keep your investment expenses under control. Your net return is simply the gross return of your investment portfolio, less the costs you incur (sales commissions, advisory fees, transaction costs). Low costs make your task easier.
 
 **Stick to simplicity**. Don’t complicate the process. Basic investing is simple — a sensible asset allocation to stocks, bonds, and cash reserves; a selection of middle-of-the-road funds that emphasize high-grade securities; a careful balancing of risk, return, and (lest we forget) cost.
