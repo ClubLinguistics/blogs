@@ -14,7 +14,6 @@ Jack Bogle was the founder and chief executive of The Vanguard Group, one of the
 **Invest you must**. The biggest risk is the long-term risk of not putting your money to work at a generous return, not the short-term but real risk of price volatility.
 
 **Time is your friend**. Give yourself all the time you can. Begin to invest in your 20s, even if it’s only a small amount, and never stop. Even modest investments in tough times will help you sustain the pace and will become a habit. Compound interest is a miracle.
-Read questions carefully and answer all parts as completely as possible. Vague, off-subject, or illegible answers will not earn credit.
 
 **Impulse is your enemy**. Eliminate emotion from your investment program. Have rational expectations about future returns, and avoid changing those expectations as the seasons change. Cold, dark winters will give way to bright, bountiful springs.
 
