@@ -2,7 +2,7 @@
 toc: false
 layout: post
 description: Producing fuel from plastic waste can save the environment.
-categories: [Environment,Social Issues]
+categories: [Environment,Social Issues,Chemistry]
 hide: false
 comments: true
 image: images/erik-mclean-plastic-waste.jpg
