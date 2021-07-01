@@ -1,5 +1,5 @@
 <figure style="float: right;">
-  <img class= "img-fluid" alt="Responsive image" src="/images/{{ include.url }}"
+  <img class= "img-fluid" alt="Responsive image" style="width:100%" src="/images/{{ include.url }}"
   
     {% if include.caption %}
     alt="{{ include.caption }}"
