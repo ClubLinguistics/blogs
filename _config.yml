@@ -119,7 +119,6 @@ kramdown:
 
 # to limit size of xml as it can grow quite large.
 feed:
-  path: atom.xml
   posts_limit: 5 #default posts_limit: 10
   excerpt_only: true
   
