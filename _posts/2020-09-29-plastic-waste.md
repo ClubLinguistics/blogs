@@ -5,7 +5,7 @@ description: Producing fuel from plastic waste can save the environment.
 categories: [Environment,Social Issues,Chemistry]
 hide: false
 comments: true
-image: images/erik-mclean-plastic-waste.jpg
+image: images/erik-mclean-plastic-waste_orig.jpg
 author: Anup Gawande
 title: Waste Is Future OR Not ? An effective way to treat plastic waste
 ---
