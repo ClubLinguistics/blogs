@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Probtheory",
-            "content": "toc: false layout: post description: t-SNE ( t-Distributed Stochastic Neighbor Embedding) is a technique that visualizes high dimensional data. categories: [machine learning] hide: false comments: true image: images/Fig1_tsne.png author: Saurav Jadhav title: What is t-SNE ? .",
-            "url": "https://clublinguistics.github.io/blogs/2022/02/05/probtheory.html",
-            "relUrl": "/2022/02/05/probtheory.html",
+            "title": "Notes on Probability",
+            "content": "",
+            "url": "https://clublinguistics.github.io/blogs/probability/statistics/2022/02/05/probtheory.html",
+            "relUrl": "/probability/statistics/2022/02/05/probtheory.html",
             "date": " • Feb 5, 2022"
         }
         
