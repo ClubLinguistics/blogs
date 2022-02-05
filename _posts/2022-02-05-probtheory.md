@@ -1,9 +1,12 @@
+---
 toc: false
 layout: post
-description: t-SNE ( t-Distributed Stochastic Neighbor Embedding) is a technique that visualizes high dimensional data.
-categories: [machine learning]
-hide: false
-comments: true
-image: images/Fig1_tsne.png
+description: Probability Theory
+categories: [Probability, Statistics]
+hide: true
+comments: false
+image: 
 author: Saurav Jadhav
-title: What is t-SNE ? 
+title: Notes on Probability
+---
+
