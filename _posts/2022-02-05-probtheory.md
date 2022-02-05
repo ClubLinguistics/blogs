@@ -12,4 +12,4 @@ title: Notes on Probability
 
 $\displaystyle The\ Sequence\ of\ sets\ are\ defined\ as\ follows$
 
-$\displaystyle \Bigl\{A$\textsubscript{k}$\displaystyle \Bigr\}_{k=1}^{\infty }$ \ \ $\displaystyle Where\ A_{k} \ are\ sets$$\displaystyle \ \forall $$\displaystyle k$
+$\displaystyle \Bigl\{A$\textsubscript{k}$\displaystyle \Bigr\}_{k=1}^{\infty }$
