@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Notes on Probability",
-            "content": "$ displaystyle The Sequence of sets are defined as follows$ . $ displaystyle Bigl{A$ textsubscript{k}$ displaystyle Bigr}{k=1}^{ infty }$ $ displaystyle Where A{k} are sets ∀ displaystyle forall ∀ displaystyle k$ .",
+            "content": "$ displaystyle The Sequence of sets are defined as follows$ . $ displaystyle Bigl{A$ textsubscript{k}$ displaystyle Bigr}_{k=1}^{ infty }$ .",
             "url": "https://clublinguistics.github.io/blogs/probability/statistics/2022/02/05/probtheory.html",
             "relUrl": "/probability/statistics/2022/02/05/probtheory.html",
             "date": " • Feb 5, 2022"
