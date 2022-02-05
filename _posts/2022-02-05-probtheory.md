@@ -3,13 +3,22 @@ toc: false
 layout: post
 description: Probability Theory
 categories: [Probability, Statistics]
-hide: true
+hide: false
 comments: false
 image: 
 author: Saurav Jadhav
 title: Notes on Probability
 ---
 
-$\displaystyle The\ Sequence\ of\ sets\ are\ defined\ as\ follows$
+\begin{array}{l}
+The\ Sequence\ of\ sets\ are\ defined\ as\ follows\ :
+\end{array}
 
-$\displaystyle \Bigl\{A$\textsubscript{k}$\displaystyle \Bigr\}_{k=1}^{\infty }$
+\begin{array}{l}
+\Big\lbrace A_{k} \Big\rbrace_{k=1}^{\infty} 
+\end{array}
+
+
+\begin{array}{l}
+If\ the\ sequence\ of\ sets\ is\ monotonic\ increasing\ then\  A_{i} \subset \ A_{i+1} \ \forall \ i
+\end{array}
