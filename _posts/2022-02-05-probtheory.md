@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: Probability Theory
 categories: [Probability, Statistics]
-hide: false
+hide: true
 comments: false
 image: 
 author: Saurav Jadhav
